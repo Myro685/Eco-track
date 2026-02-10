@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.aside-container {
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Tablet (768px and up) */
+@media screen and (min-width: 768px) {
+    .main-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    .container {
+        gap: 2rem;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+/* Large screens (1024px and up) */
+@media screen and (min-width: 1024px) {
+    .main-container {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Extra large screens (1500px and up) */
+@media screen and (min-width: 1500px) {
+    .main-container {
+        width: 80%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    .aside-container {
+        width: 20%;
+    }
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
 }
